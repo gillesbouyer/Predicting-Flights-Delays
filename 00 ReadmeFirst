@@ -1,0 +1,49 @@
+
+This project is to predict flight delays. 
+
+
+This folder includes
+    jupyter notebooks
+    App folder with .py and html for the app
+    Power Point presentation
+    Dataset was larger than 3GB and is too large to be loaded to Github
+    Hence notebooks will not run
+    ***The Delay App can be run***
+
+Documents are numbered from 01 to 06
+
+001 Airlines Data Acquisition.ipynb is the notebook gathering data:
+	Delay file from 2015 (Performance_2015.csv)
+	Plane Characteristics (faa_tail_number_inquiry.jsonl)
+    We also remove attributes with many nan and keep data we think can help:
+	delays1.csv 
+	tail1.csv (keeping 
+
+002 Airlines Data Enrichment_SQL_Prep prepares our data to use in a model
+	-1- We load our delays and tail files in an Amazon Postgres DB
+	-2- We join the tables on tailnum
+	-3- We keep only the columns that can become numeric and transform them
+		to integer or float	
+	-4- We create an intermediate files to use in our prediction models
+		numeric_file.csv 
+		numeric_file.p 
+03 Airlines Delay Prediction Models contains various analysis performed
+	-1- Logistic regression model is saved in "savelogreg.p"
+	-2- Random Forest
+	-3- Neural Network
+	-4- Attempt on SVM linear
+
+04 Airlines visualization data.ipynb
+	Contains a few queries that generated files to be loaded in tableau
+	not really interesting
+	Tableau visuals appear in powerpoint presentation
+
+05 Delay App folder contains the components of the app
+	python main.py and copy address in chrome tab
+
+06 mcnultyv3.pptx is the presentation document for the project
+
+
+
+Happy reading !
+Gilles Bouyer

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flight Delays</title>
+  <style>
+  body{
+    font-family: sans-serif;
+  }
+  .button {
+    background-color: Yellow;
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .animal-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 10px 10px 0px #eee;
+    width: 300px;
+    margin: auto;
+  }
+  </style>
+
+</head>
+
+<body align="center">
+
+  <h2>Enter the flight info and I will tell you if you will arrive late.</h2>
+
+  <form action="/predict_delay/" method="post">
+
+    <div class="animal-card" align="center">
+
+			Flight Number:
+			<br>
+        <input type="text" name="flightnum">
+      <br>
+
+			Departing From:
+      <br>
+        <input type="text" name="originairportid">
+      <br>
+
+      Current Delay at Departure(in minutes):
+      <br>
+        <input type="text" name="depdelay">
+      <br>
+
+      Destination Airport:
+      <br>
+      	<input type="text" name="destairportid">
+      <br>
+
+			Month:
+      <br>
+        <input type="text" name="month">
+      <br>
+
+			Day of the Week:
+      <br>
+        <input type="text" name="dayofweek">
+      <br>
+
+      Distance (miles)
+      <br>
+        <input type="text" name="distance">
+      <br>
+
+    </div>
+
+  <br>
+
+  <button type="submit" class="button">
+    Click Here For Prediction
+  </button>
+  </form>
+
+  <br>
+
+  {% if message %}
+  <h2>{{message}}</h2>
+  {% endif %}
+
+</body>
+</html>
